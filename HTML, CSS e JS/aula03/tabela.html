@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    
+    <!-- Navigator -->
+    <nav>
+        <a href="link.html">Exemplo de link</a>
+        <a href="listas.html">Exemplo de listas</a>
+        <a href="tabela.html">Exemplo de tabela</a>
+    </nav>
+
+    <!-- TR -> Table Row (Linha de tabela) -->
+    <!-- TD -> Table divisor (Linha de coluna) -->
+
+    <!-- Exemplo 01 -->
+    <table class="table">
+        <tr>
+            <td>Ana</td>
+            <td>Bianca</td>
+            <td>Julia</td>
+        </tr>
+
+        <tr>
+            <td>Carla</td>
+            <td>Luciana</td>
+            <td>Sueli</td>
+        </tr>
+    </table>
+
+    <!-- Exemplo 02 -->
+    <table class="table">
+        <tr>
+            <td rowspan="2" style="background-color: yellow;">1</td>
+            <td colspan="2" style="background-color: green;">2</td>
+        </tr>
+
+        <tr>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+
+    <!-- Exemplo 03 -->
+    <table class="table table-dark table-striped">
+
+        <!-- Cabeçalho -->
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cidade</th>
+            </tr>   
+        </thead>
+
+        <!-- Corpo -->
+        <tbody>
+            <tr>
+                <td>Bianca</td>
+                <td>São Paulo</td>
+            </tr>
+
+            <tr>
+                <td>Priscila</td>
+                <td>Curitiba</td>
+            </tr>
+        </tbody>
+
+        <!-- Rodapé -->
+        <tfoot>
+            <tr>
+                <td colspan="2">Foram encontrados 2 registros. Para maiores informações <a href="#">clique aqui</a></td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

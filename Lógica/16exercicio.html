@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        /*
+            Nome     Nota 1      Nota 2      Média
+            Ana        8           10          9
+            Beatriz    10          10         10
+        
+        */
+
+        // Matriz
+        var matriz = [];
+
+        // Quantidade de aprovados(as) e reprovados(as)
+        var aprovada = 0, reprovada = 0;
+
+        // Laço
+        do{
+
+            // Obter dados
+            var nome = prompt("Informe o nome");
+
+            var nota1 = parseFloat(prompt("Informe a primeira nota"));
+
+            var nota2 = parseFloat(prompt("Informe a segunda nota"));
+
+            // Realizar a média
+            var media = (nota1+nota2)/2;
+
+            // Contabilizar aprovadas e reprovadas
+            if(media >= 7){
+                aprovada++;
+            }else{
+                reprovada++;
+            }
+
+            // Cadastrar na matriz
+            matriz.push([nome, nota1, nota2, media]);
+
+            // Perguntar se deseja cadastrar mais um aluno
+            var continuar = confirm("Deseja cadastrar mais um aluno?");
+
+        }while(continuar == true);
+
+        // Listar dados
+        for(var indice = 0; indice < matriz.length; indice++){
+            document.write("Nome:   " + matriz[indice][0] + "<br>");
+            document.write("Nota 1: " + matriz[indice][1] + "<br>");
+            document.write("Nota 2: " + matriz[indice][2] + "<br>");
+            document.write("Média:  " + matriz[indice][3] + "<hr>");
+        }
+
+        // Exibir a quantidade de aprovadas e reprovadas
+        document.write(aprovada + " foram aprovadas<br>");
+        document.write(reprovada + " foram reprovadas<br>");
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

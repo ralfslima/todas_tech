@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // Matriz
+        var dados = [];
+
+        // Laço de repetição
+        do{
+
+            // Obter o nome
+            var nome = prompt("Informe um nome");
+
+            // Obter a idade
+            var validaIdade = false;
+            while(validaIdade == false){
+
+                var idade = prompt("Informe uma idade");
+
+                if(isNaN(idade) == false){
+                    validaIdade = true;
+                }else{
+                    alert("Informe uma idade válida!");
+                }
+
+            }
+
+            // Obter o e-mail
+            var email = prompt("Informe um e-mail");
+
+            // Cadastrar dados na matriz
+            dados.push([nome, idade, email]);
+
+            // Verificar se deseja continuar
+            var continuar = confirm("Deseja continuar?");
+
+        }while(continuar == true);
+
+
+        // Listar nomes e idades
+        for(var indice = 0; indice<dados.length; indice++){
+            document.write("Nome:  " + dados[indice][0] + "<br>");
+            document.write("Idade: " + dados[indice][1] + "<br>");
+            document.write("E-mail: " + dados[indice][2] + "<hr>");
+        }
+
+        // Exibir estrutura da matriz via console
+        console.table(dados);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

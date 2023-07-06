@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS -->
+    <style>
+        select{
+
+            /* Largura */
+            width: 300px;
+
+            /* Espaçamento entre a borda e o conteúdo */
+            padding: 10px;
+
+            /* Bordas */
+            border-style: dotted;
+            border-color: rgb(16, 88, 176);
+            border-width: 3px;
+            border-radius: 10px;
+
+            /* Margem */
+            margin-left: 500px;
+            margin-top: 200px;
+
+            /* Cor de fundo */
+            background-color: rgb(226, 223, 0);
+        }
+
+        body{
+            background-color: rgb(28, 172, 2);
+        }
+        
+    </style>
+
+    <!-- JS -->
+    <script>
+
+        // Função
+        function descricao(valor){
+            
+            // Estrutura de escolha
+            switch(parseInt(valor)){
+
+                case 1: alert("Maior cidade do país"); break;
+                case 2: alert("Praias maravilhosas"); break;
+                case 3: alert("Capital dos barzinhos"); break;
+
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    
+    <select onchange="descricao(this.value)">
+        <option value="0">Informe uma cidade</option>
+        <option value="1">São Paulo</option>
+        <option value="2">Rio de Janeiro</option>
+        <option value="3">Belo Horizonte</option>
+    </select>
+    
+
+</body>
+</html>

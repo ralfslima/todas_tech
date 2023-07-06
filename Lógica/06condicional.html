@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // Obter a média
+        var media = parseFloat(prompt("Informe a média"));
+
+        // Condicional
+        // if(media >= 7){
+        //     document.write("Aprovado(a)");
+        // }else{
+        //     document.write("Reprovado(a)");
+        // }
+
+        // Condicional COMPOSTA ou ANINHADA
+        if(media < 0 || media > 10){
+            document.write("Média inválida");
+        }else if(media == 10){
+            document.write("Nota máxima!");
+        }else if(media >= 9){
+            document.write("Ótimo")
+        }else if(media >= 7){
+            document.write("Bom");
+        }else if(media >= 5){
+            document.write("Regular");
+        }else{
+            document.write("Reprovado(a)");
+        }
+
+        /*
+            OPERADORES RELACIONAIS
+            >   Maior
+            <   Menor
+            >=  Maior ou Igual
+            <=  Menor ou Igual
+            ==  Igual
+            !=  Diferente
+        */
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

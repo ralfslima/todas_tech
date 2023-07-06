@@ -1,0 +1,15 @@
+nav{
+    background-color: #000;
+}
+
+nav a{
+    color: #fff;
+    text-decoration: none;
+    padding: 25px;
+    display: inline-block;
+    transition: background-color 1s;
+}
+
+nav a:hover{
+    background-color: #474747;
+}

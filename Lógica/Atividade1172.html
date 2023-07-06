@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // Array
+        var numeros = [];
+
+        // Ler um array
+        for(var indice = 0; indice<10; indice++){
+            //numeros[indice] = parseInt(lines.shift());
+            numeros[indice] = parseInt(prompt("Informe um número"));
+        }
+
+        // Listar o array
+        for(var indice = 0; indice<10; indice++){
+            if(numeros[indice] <= 0){
+                console.log("X["+indice+"] = " + 1);
+            }else{
+                console.log("X["+indice+"] = " + numeros[indice]);
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

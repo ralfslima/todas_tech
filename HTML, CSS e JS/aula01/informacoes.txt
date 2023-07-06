@@ -1,0 +1,25 @@
+Boa noite
+
+Abaixo segue o link contendo todas as atividades desenvolvidas na aula de hoje:
+
+https://drive.google.com/drive/folders/1EOqVf5WPOC2D96TFl1iLXnvaXZppMY7Y?usp=drive_link
+
+Também deixo alguns sites para estudos (HTML, CSS e JavaScript):
+
+https://www.w3schools.com/
+https://www.tutorialspoint.com/index.htm
+https://tutorialehtml.com/pt/html-guia-completo-tutorial-html/
+http://html.net/
+
+
+
+*HTML*
+Linguagem de marcação para criar estruturas web, exemplo: textos
+imagens, tabelas, formulários, links, etc...
+
+*CSS*
+Linguagem de estilos, podemos alterar características da
+linguagem HTML, como por exemplo: fontes, cores, bordas...
+
+*JavaScript*
+É uma linguagem de programação. Nessa etapa o foco do JavaScript será trabalhar com interações como: ao digitar, ao clicar, passar o cursor sobre algum elemento...
