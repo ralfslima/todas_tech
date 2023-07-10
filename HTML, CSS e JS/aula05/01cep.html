@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício - CEP</title>
+
+    <script>
+        function acao(){
+
+            // Obter o valor do elemento ID
+            var cep = document.getElementById("cep").value;
+
+            // Requisição
+            //fetch('https://viacep.com.br/ws/'+cep+'/json/')
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then(retorno => retorno.json())
+            .then(dados => {
+                document.getElementById("estado").innerText = "Estado: " + dados.uf;
+                document.getElementById("cidade").innerText = "Cidade: " + dados.localidade;
+                document.getElementById("bairro").innerText = "Bairro: " + dados.bairro;
+                document.getElementById("logradouro").innerText = "Logradouro: " + dados.logradouro;
+            });
+            
+        }
+    </script>
+</head>
+<body>
+    
+    <form>
+        <input type="text" id="cep" placeholder="Informe o CEP">
+        <input type="button" value="Obter dados" onclick="acao()">
+    </form>
+
+    <p id="estado"></p>
+    <p id="cidade"></p>
+    <p id="bairro"></p>
+    <p id="logradouro"></p>
+
+</body>
+</html>

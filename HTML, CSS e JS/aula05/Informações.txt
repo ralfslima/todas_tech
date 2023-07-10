@@ -1,0 +1,12 @@
+API: Application Programming Interface.
+
+Conceito: É um sistema que pode realizar diversas
+requisições.
+
+Requisições:
+    POST:   Cadastrar
+    GET:    Selecionar
+    PUT:    Alterar
+    DELETE: Remoção
+
+Padrão de dados (envio e recebimento): JSON

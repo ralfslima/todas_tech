@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+    <script>
+
+        // Função para listar todas as postagens
+        function listar(){
+
+            fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(requisicao => requisicao.json())
+            .then(postagens => {
+
+                // Obter o tbody
+                var tabela = document.getElementById("tabela");
+
+                // Laço de repetição
+                for(var indice = 0; indice < postagens.length; indice++){
+
+                    // Criar linha de tabela
+                    var linha = tabela.insertRow(-1);
+
+                    // Criar colunas de tabela
+                    var colunaCodigo = linha.insertCell(0);
+                    var colunaTitulo = linha.insertCell(1);
+                    var colunaTexto  = linha.insertCell(2);
+
+                    // Informar os valores de cada coluna
+                    colunaCodigo.innerHTML = postagens[indice].id
+                    colunaTitulo.innerHTML = postagens[indice].title
+                    colunaTexto.innerHTML  = postagens[indice].body
+
+                }
+
+            });
+
+        }
+
+        // Função para cadastrar postagens
+        function cadastrar(){
+
+            // Obter o título e o texto
+            var titulo = document.getElementById("titulo").value;
+            var texto = document.getElementById("texto").value;
+
+            // Criar objeto
+            var obj = {
+                "title":titulo,
+                "body":texto
+            }
+
+            // Requisição
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+                method:'POST',
+                headers:{
+                    'content-type':'application/json'
+                },
+                body:JSON.stringify(obj)
+            })
+            .then(retorno => retorno.json())
+            .then(postagem => {
+
+                // Obter o tbody
+                var tabela = document.getElementById("tabela");
+
+                // Criar uma linha
+                var linha = tabela.insertRow(-1);
+
+                // Criar colunas
+                var colunaCodigo = linha.insertCell(0);
+                var colunaTitulo = linha.insertCell(1);
+                var colunaTexto = linha.insertCell(2);
+
+                // Conteúdo
+                colunaCodigo.innerHTML = postagem.id;
+                colunaTitulo.innerHTML = postagem.title;
+                colunaTexto.innerHTML = postagem.body;
+
+            })
+
+        }
+
+    </script>
+</head>
+<body onload="listar()">
+
+    <form>
+        <input type="text" id="titulo" placeholder="Informe o título">
+        <input type="text" id="texto"  placeholder="Informe o texto">
+        <input type="button" value="Cadastrar" onclick="cadastrar()">
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Título</th>
+                <th>Conteúdo</th>
+            </tr>
+        </thead>
+
+        <tbody id="tabela"></tbody>
+    </table>
+    
+</body>
+</html>
