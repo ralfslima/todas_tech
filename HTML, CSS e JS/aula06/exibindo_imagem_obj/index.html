@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        
+        function acao(){
+            var obj = {
+            'titulo':'Imagem de natureza',
+            'imagem':'imagens/imagem.jpeg'
+            }
+
+        document.getElementById("titulo").innerHTML = obj.titulo;
+        document.getElementById("imagem").src = obj.imagem;
+        }
+
+
+    </script>
+</head>
+<body onload="acao()">
+
+    <p id="titulo"></p>
+    <img id="imagem"> 
+</body>
+</html>
