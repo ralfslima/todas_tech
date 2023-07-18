@@ -2,7 +2,8 @@ void main(){
 
   // Tentativa
   try{
-    print("Executa uma função");
+    int? numero = int.parse("a2");
+    print("O número informadoe é $numero");
   }catch(erro){
     print("Falha ao executar: $erro");
   }
