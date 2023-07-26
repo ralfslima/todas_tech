@@ -12,10 +12,10 @@
     <li>Organização do projeto.</li>
 </ol>
 
-<h2>Super<h2>
+<h2>Super</h2>
 <p>Utilizamos o comando super para executar o construtor da classe que herdamos.</p>
 
-<h2>Abstração<h2>
+<h2>Abstração</h2>
 <p>Classes abstratas servem de molde para outras classes. O foco é na padronização dos nomes de métodos e saber como funciona a regra de negócios.</p>
 <ol>
     <li>Você pode criar métodos obrigatórios ou opcionais;</li>
