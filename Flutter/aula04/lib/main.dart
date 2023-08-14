@@ -29,25 +29,13 @@ class Pagina extends StatefulWidget {
 }
 
 class ConteudoPagina extends State {
-  bool ativo = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Componentes de formulário"),
-      ),
-      //body: const ElementoStatefulWidget());
-      body: Switch(
-        value: ativo,
-        activeColor: Colors.green,
-        onChanged: (valor) {
-          setState(() {
-            ativo = valor;
-          });
-        },
-      ),
-    );
+        appBar: AppBar(
+          title: const Text("Componentes de formulário"),
+        ),
+        body: const ElementoStatefulWidget());
   }
 }
 
@@ -56,7 +44,7 @@ class ElementoStatefulWidget extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return DropdownButtonState();
+    return CheckboxState();
   }
 }
 
@@ -74,6 +62,39 @@ class DropdownButtonState extends State {
       ).toList(),
       onChanged: (nome) {
         print("A opção escolhida é: $nome");
+      },
+    );
+  }
+}
+
+class SwitchState extends State {
+  bool ativo = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+      value: ativo,
+      activeColor: Colors.green,
+      onChanged: (valor) {
+        setState(() {
+          ativo = valor;
+        });
+      },
+    );
+  }
+}
+
+class CheckboxState extends State {
+  bool aceito = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Checkbox(
+      value: aceito,
+      onChanged: (valor) {
+        setState(() {
+          aceito = valor!;
+        });
       },
     );
   }
