@@ -44,7 +44,7 @@ class ElementoStatefulWidget extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return CheckboxState();
+    return RadioButtonState();
   }
 }
 
@@ -96,6 +96,48 @@ class CheckboxState extends State {
           aceito = valor!;
         });
       },
+    );
+  }
+}
+
+class RadioButtonState extends State {
+  String? turno;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        RadioListTile(
+          title: const Text("Matutino"),
+          value: "matutino",
+          groupValue: turno,
+          onChanged: (valor) {
+            setState(() {
+              turno = valor;
+            });
+          },
+        ),
+        RadioListTile(
+          title: const Text("Vespertino"),
+          value: "vespertino",
+          groupValue: turno,
+          onChanged: (valor) {
+            setState(() {
+              turno = valor;
+            });
+          },
+        ),
+        RadioListTile(
+          title: const Text("Noturno"),
+          value: "noturno",
+          groupValue: turno,
+          onChanged: (valor) {
+            setState(() {
+              turno = valor;
+            });
+          },
+        )
+      ],
     );
   }
 }
