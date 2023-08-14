@@ -29,11 +29,25 @@ class Pagina extends StatefulWidget {
 }
 
 class ConteudoPagina extends State {
+  // Lista contendo nomes
+  List<String> nomes = ["Selecione um nome", "Ralf", "Isabella", "Rebeca"];
+
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      "Hello World!",
-      textDirection: TextDirection.ltr,
-    );
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text("Componentes de formulário"),
+        ),
+        body: DropdownButton<String>(
+          value: nomes.first,
+          items: nomes.map(
+            (n) {
+              return DropdownMenuItem<String>(value: n, child: Text(n));
+            },
+          ).toList(),
+          onChanged: (nome) {
+            print("A opção escolhida é: $nome");
+          },
+        ));
   }
 }
