@@ -35,16 +35,51 @@ class ConteudoPagina extends State {
         appBar: AppBar(
           title: const Text("Componentes de formulário"),
         ),
-        body: const ElementoStatefulWidget());
+        //body: const ElementoStatefulWidget());
+        body: const Column(
+          children: [
+            ElementoStatefulWidget1(),
+            ElementoStatefulWidget2(),
+            ElementoStatefulWidget3(),
+            ElementoStatefulWidget4()
+          ],
+        ));
   }
 }
 
-class ElementoStatefulWidget extends StatefulWidget {
-  const ElementoStatefulWidget({super.key});
+class ElementoStatefulWidget1 extends StatefulWidget {
+  const ElementoStatefulWidget1({super.key});
 
   @override
   State<StatefulWidget> createState() {
     return RadioButtonState();
+  }
+}
+
+class ElementoStatefulWidget2 extends StatefulWidget {
+  const ElementoStatefulWidget2({super.key});
+
+  @override
+  State<StatefulWidget> createState() {
+    return CheckboxState();
+  }
+}
+
+class ElementoStatefulWidget3 extends StatefulWidget {
+  const ElementoStatefulWidget3({super.key});
+
+  @override
+  State<StatefulWidget> createState() {
+    return SwitchState();
+  }
+}
+
+class ElementoStatefulWidget4 extends StatefulWidget {
+  const ElementoStatefulWidget4({super.key});
+
+  @override
+  State<StatefulWidget> createState() {
+    return DropdownButtonState();
   }
 }
 
