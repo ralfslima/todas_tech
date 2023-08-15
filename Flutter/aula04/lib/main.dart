@@ -196,6 +196,8 @@ class ExercicioState extends State {
     "Curitiba"
   ];
   bool estuda = false;
+  String? cidadeSelecionada;
+  String? mensagem;
 
   @override
   Widget build(BuildContext context) {
@@ -228,9 +230,9 @@ class ExercicioState extends State {
                             value: n, child: Text(n));
                       },
                     ).toList(),
-                    onChanged: (nome) {
+                    onChanged: (cidade) {
                       // ignore: avoid_print
-                      print("A opção escolhida é: $nome");
+                      cidadeSelecionada = cidade;
                     },
                   ),
                 ),
@@ -248,7 +250,9 @@ class ExercicioState extends State {
                       Checkbox(
                         value: estuda,
                         onChanged: (valor) {
-                          estuda = valor!;
+                          setState(() {
+                            estuda = valor!;
+                          });
                         },
                       )
                     ],
@@ -259,8 +263,17 @@ class ExercicioState extends State {
                 padding: const EdgeInsets.only(top: 30),
                 child: ElevatedButton(
                   child: const Text("Continuar"),
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      mensagem =
+                          "$nome mora em $cidadeSelecionada e ${estuda == true ? 'está estudando' : 'não está estudando.'}";
+                    });
+                  },
                 ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 30),
+                child: Text("${mensagem ?? ''} "),
               )
             ],
           )
