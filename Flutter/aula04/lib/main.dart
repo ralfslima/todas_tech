@@ -196,7 +196,7 @@ class ExercicioState extends State {
     "Curitiba"
   ];
   bool estuda = false;
-  String? cidadeSelecionada;
+  String cidadeSelecionada = "Selecione uma cidade";
   String? mensagem;
 
   @override
@@ -208,31 +208,15 @@ class ExercicioState extends State {
           Column(
             children: [
               SizedBox(
-                width: 200,
-                child: TextField(
-                  decoration: const InputDecoration(hintText: 'Nome'),
-                  onChanged: (valor) {
-                    setState(() {
-                      nome = valor;
-                    });
-                  },
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 30),
-                child: SizedBox(
-                  width: 200,
-                  child: DropdownButton<String>(
-                    value: cidades.first,
-                    items: cidades.map(
-                      (n) {
-                        return DropdownMenuItem<String>(
-                            value: n, child: Text(n));
-                      },
-                    ).toList(),
-                    onChanged: (cidade) {
-                      // ignore: avoid_print
-                      cidadeSelecionada = cidade;
+                width: 300,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 30),
+                  child: TextField(
+                    decoration: const InputDecoration(hintText: 'Nome'),
+                    onChanged: (valor) {
+                      setState(() {
+                        nome = valor;
+                      });
                     },
                   ),
                 ),
@@ -240,8 +224,32 @@ class ExercicioState extends State {
               Padding(
                 padding: const EdgeInsets.only(top: 30),
                 child: SizedBox(
-                  width: 200,
+                  width: 300,
+                  child: DropdownButton<String>(
+                    focusColor: Colors.transparent,
+                    value: cidadeSelecionada,
+                    items: cidades.map(
+                      (n) {
+                        return DropdownMenuItem<String>(
+                          value: n,
+                          child: Text(n),
+                        );
+                      },
+                    ).toList(),
+                    onChanged: (cidade) {
+                      setState(() {
+                        cidadeSelecionada = cidade!;
+                      });
+                    },
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 30),
+                child: SizedBox(
+                  width: 300,
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
                         "Você estuda?",
@@ -265,8 +273,14 @@ class ExercicioState extends State {
                   child: const Text("Continuar"),
                   onPressed: () {
                     setState(() {
-                      mensagem =
-                          "$nome mora em $cidadeSelecionada e ${estuda == true ? 'está estudando' : 'não está estudando.'}";
+                      if (nome == "" || nome == null) {
+                        mensagem = "Informe um nome";
+                      } else if (cidadeSelecionada == "Selecione uma cidade") {
+                        mensagem = "Informe uma cidade";
+                      } else {
+                        mensagem =
+                            "$nome mora em $cidadeSelecionada e ${estuda == true ? 'está estudando.' : 'não está estudando.'}";
+                      }
                     });
                   },
                 ),
