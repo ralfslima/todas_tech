@@ -32,18 +32,19 @@ class ConteudoPagina extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Componentes de formulário"),
-        ),
-        //body: const ElementoStatefulWidget());
-        // body: const Column(
-        //   children: [
-        //     ElementoStatefulWidget1(),
-        //     ElementoStatefulWidget2(),
-        //     ElementoStatefulWidget3(),
-        //     ElementoStatefulWidget4()
-        //   ],
-        body: const ElementoStatefulWidget5());
+      appBar: AppBar(
+        title: const Text("Componentes de formulário"),
+      ),
+      //body: const ElementoStatefulWidget());
+      // body: const Column(
+      //   children: [
+      //     ElementoStatefulWidget1(),
+      //     ElementoStatefulWidget2(),
+      //     ElementoStatefulWidget3(),
+      //     ElementoStatefulWidget4()
+      //   ],
+      body: const ElementoStatefulWidget5(),
+    );
   }
 }
 
