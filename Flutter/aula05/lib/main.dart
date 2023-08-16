@@ -89,7 +89,23 @@ class ConteudoPagina extends State {
                 itemBuilder: (BuildContext obj, int indice) {
                   return Card(
                     color: Colors.green,
-                    child: Text(nomes[indice]),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(nomes[indice]),
+                          ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                nomes.removeAt(indice);
+                              });
+                            },
+                            child: const Text("Excluir"),
+                          ),
+                        ],
+                      ),
+                    ),
                   );
                 },
               ),
