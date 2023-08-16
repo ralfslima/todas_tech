@@ -38,6 +38,9 @@ class ConteudoPagina extends State {
   // Lista de nomes
   List<String> nomes = ["Ralf", "Carla", "Bianca", "Larissa", "Pâmela"];
 
+  // Variável para armazenar o nome digitador
+  String? nome;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,14 +50,33 @@ class ConteudoPagina extends State {
       body: SizedBox(
         child: Column(
           children: [
-            // Botão
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  nomes.add("Leonardo");
-                });
-              },
-              child: const Text("Cadastrar"),
+            // Caixa de texto e Botão
+            SizedBox(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30),
+                    child: TextField(
+                      onChanged: (valorDigitado) {
+                        setState(() {
+                          nome = valorDigitado;
+                        });
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          nomes.add(nome!);
+                        });
+                      },
+                      child: const Text("Cadastrar"),
+                    ),
+                  )
+                ],
+              ),
             ),
 
             // ListView
