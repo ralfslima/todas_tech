@@ -58,15 +58,19 @@ class ConteudoPagina extends State {
             ),
 
             // ListView
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: nomes.length,
-              itemBuilder: (BuildContext obj, int indice) {
-                return Card(
-                  color: Colors.green,
-                  child: Text(nomes[indice]),
-                );
-              },
+            SizedBox(
+              height: 300,
+              child: ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                itemCount: nomes.length,
+                itemBuilder: (BuildContext obj, int indice) {
+                  return Card(
+                    color: Colors.green,
+                    child: Text(nomes[indice]),
+                  );
+                },
+              ),
             ),
           ],
         ),
