@@ -47,70 +47,86 @@ class ConteudoPagina extends State {
       appBar: AppBar(
         title: const Text("5ª aula de Flutter"),
       ),
-      body: SizedBox(
-        child: Column(
-          children: [
-            // Caixa de texto e Botão
-            SizedBox(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 30),
-                    child: TextField(
-                      onChanged: (valorDigitado) {
-                        setState(() {
-                          nome = valorDigitado;
-                        });
-                      },
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          nomes.add(nome!);
-                        });
-                      },
-                      child: const Text("Cadastrar"),
-                    ),
-                  )
-                ],
-              ),
-            ),
-
-            // ListView
-            SizedBox(
-              height: 300,
-              child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.vertical,
-                itemCount: nomes.length,
-                itemBuilder: (BuildContext obj, int indice) {
-                  return Card(
-                    color: Colors.green,
-                    child: Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(nomes[indice]),
-                          ElevatedButton(
-                            onPressed: () {
-                              setState(() {
-                                nomes.removeAt(indice);
-                              });
+      body: Center(
+        child: SizedBox(
+          width: 500,
+          child: Column(
+            children: [
+              // Caixa de texto e Botão
+              SizedBox(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 30),
+                      child: TextField(
+                        decoration: const InputDecoration(
+                          hintText: 'Informe um nome',
+                        ),
+                        onChanged: (valorDigitado) {
+                          setState(
+                            () {
+                              nome = valorDigitado;
                             },
-                            child: const Text("Excluir"),
-                          ),
-                        ],
+                          );
+                        },
                       ),
                     ),
-                  );
-                },
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10, bottom: 30),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            // Cadastrar na Lista
+                            nomes.add(nome!);
+                          });
+                        },
+                        child: const Text(
+                          "Cadastrar",
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+
+              // ListView
+              SizedBox(
+                height: 400,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.vertical,
+                  itemCount: nomes.length,
+                  itemBuilder: (BuildContext obj, int indice) {
+                    return Card(
+                      color: Colors.green,
+                      child: Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              nomes[indice],
+                              style: const TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  nomes.removeAt(indice);
+                                });
+                              },
+                              child: const Text("Excluir"),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
