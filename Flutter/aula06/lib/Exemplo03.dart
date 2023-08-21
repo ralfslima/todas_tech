@@ -27,6 +27,7 @@ class EstruturaExemplo03 extends State {
         width: 300,
         child: Column(
           children: [
+            Image.asset("assets/images/computador.png"),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(context,
