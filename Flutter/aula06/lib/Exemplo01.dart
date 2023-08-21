@@ -19,9 +19,21 @@ class EstruturaExemplo01 extends State {
       appBar: AppBar(
         title: const Text("GridView"),
       ),
-      body: const Text(
-        "Exemplo 01",
-        textDirection: TextDirection.ltr,
+      body: SizedBox(
+        width: 600,
+        child: GridView(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+          ),
+          children: [
+            Image.network("https://picsum.photos/200/200?random=1"),
+            Image.network("https://picsum.photos/200/200?random=2"),
+            Image.network("https://picsum.photos/200/200?random=3"),
+            Image.network("https://picsum.photos/200/200?random=4"),
+            Image.network("https://picsum.photos/200/200?random=5"),
+            Image.network("https://picsum.photos/200/200?random=6"),
+          ],
+        ),
       ),
     );
   }

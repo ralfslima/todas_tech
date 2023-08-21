@@ -13,15 +13,32 @@ class Exemplo02 extends StatefulWidget {
 
 // Classe - State
 class EstruturaExemplo02 extends State {
+  bool exibir = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Visibility"),
       ),
-      body: const Text(
-        "Exemplo 02",
-        textDirection: TextDirection.ltr,
+      body: SizedBox(
+        width: 500,
+        child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  exibir = !exibir;
+                });
+              },
+              child: const Text("Clique aqui"),
+            ),
+            Visibility(
+              child: Text("Hello World!"),
+              visible: exibir,
+            )
+          ],
+        ),
       ),
     );
   }
