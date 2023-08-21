@@ -1,6 +1,9 @@
 // Importar dependência do Material
 import 'package:flutter/material.dart';
 
+// Importar Fonte do Google
+import 'package:google_fonts/google_fonts.dart';
+
 // Importar classes
 import 'package:aula06/Exemplo01.dart';
 import 'package:aula06/Exemplo02.dart';
@@ -27,6 +30,10 @@ class EstruturaExemplo03 extends State {
         width: 300,
         child: Column(
           children: [
+            Text(
+              'This is Google Fonts',
+              style: GoogleFonts.acme(),
+            ),
             Image.asset("assets/images/computador.png"),
             ElevatedButton(
               onPressed: () {
