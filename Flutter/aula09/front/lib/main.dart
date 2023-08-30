@@ -7,12 +7,6 @@ import 'package:http/http.dart' as http;
 // Importação do convert
 import 'dart:convert';
 
-class Produto {
-  int? codigo;
-  String? nome;
-  String? imagem;
-}
-
 // Inicialização
 void main() {
   runApp(const MyApp());
