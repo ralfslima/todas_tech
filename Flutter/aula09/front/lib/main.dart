@@ -59,6 +59,31 @@ Future<Pessoa> cadastrarPessoa(String nome, String cidade) async {
   return pessoa;
 }
 
+// SELECIONAR TODAS AS PESSOAS NA API
+Future<List<Pessoa>> selecionarPessoas() async {
+  // Realizar a requisição
+  var retorno = await http.get(Uri.parse('http://localhost:3000/pessoas'));
+
+  // Extrair o body do retorno
+  var dados = jsonDecode(retorno.body);
+
+  // Lista de pessoas
+  List<Pessoa> pessoas = [];
+
+  // Laço de repetição
+  for (var obj in dados) {
+    Pessoa p = Pessoa();
+    p.id = obj["id"];
+    p.nome = obj["nome"];
+    p.cidade = obj["cidade"];
+
+    pessoas.add(p);
+  }
+
+  // Retorno
+  return pessoas;
+}
+
 // State
 class ConteudoPagina extends State {
   // Variáveis
