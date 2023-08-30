@@ -4,21 +4,6 @@
       "id": 1,
       "nome": "Ralf",
       "cidade": "Blumenau"
-    },
-    {
-      "nome": "Larissa",
-      "cidade": "Curitiba",
-      "id": 2
-    },
-    {
-      "nome": "Lucas",
-      "cidade": "Brusque",
-      "id": 3
-    },
-    {
-      "nome": "Cleber",
-      "cidade": "Gaspar",
-      "id": 4
     }
   ]
 }

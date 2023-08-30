@@ -47,9 +47,34 @@ class ConteudoPagina extends State {
       appBar: AppBar(
         title: const Text("9ª aula de Flutter"),
       ),
-      body: const Text(
-        "Hello World",
-        textDirection: TextDirection.ltr,
+      body: Center(
+        child: Column(
+          children: [
+            // FORMULÁRIO DE CADASTRO
+            SizedBox(
+              width: 300,
+              child: Column(
+                children: [
+                  // Campo de nome
+                  TextField(
+                    onChanged: (valor) {},
+                  ),
+                  // Cidade
+                  TextField(
+                    onChanged: (value) {},
+                  ),
+                  // Botão
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Text("Cadastrar"),
+                  ),
+                ],
+              ),
+            ),
+
+            // LISTAGEM DE PESSOAS
+          ],
+        ),
       ),
     );
   }
