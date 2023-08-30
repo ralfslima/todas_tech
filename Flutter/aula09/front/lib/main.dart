@@ -7,6 +7,9 @@ import 'package:http/http.dart' as http;
 // Importação do convert
 import 'dart:convert';
 
+// Importação da classe Pessoa
+import 'package:front/Pessoa.dart';
+
 // Inicialização
 void main() {
   runApp(const MyApp());
@@ -37,6 +40,23 @@ class Pagina extends StatefulWidget {
   State<StatefulWidget> createState() {
     return ConteudoPagina();
   }
+}
+
+// CADASTRAR UMA NOVA PESSOA NA API
+Future<Pessoa> cadastrarPessoa(String nome, String cidade) async {
+  // Realizar requisição
+  var retorno = await http.post(Uri.parse('http://localhost:3000/pessoas'),
+      headers: <String, String>{'Content-type': 'application/json'},
+      body: jsonEncode(<String, String>{'nome': nome, 'cidade': cidade}));
+
+  // Extrair o retorno da API
+  var pessoa = jsonDecode(retorno.body);
+
+  // Print
+  print(pessoa['id']);
+
+  // Retorno
+  return pessoa;
 }
 
 // State
