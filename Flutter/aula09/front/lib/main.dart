@@ -150,25 +150,27 @@ class ConteudoPagina extends State {
             ),
 
             // LISTAGEM DE PESSOAS
-            FutureBuilder(
-              future: selecionarPessoas(),
-              builder: (context, snapshot) {
-                return ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: snapshot.data!.length,
-                  itemBuilder: (context, index) {
-                    return Card(
-                      child: Column(
-                        children: [
-                          Text("${snapshot.data![index].id}"),
-                          Text("${snapshot.data![index].nome}"),
-                          Text("${snapshot.data![index].cidade}"),
-                        ],
-                      ),
-                    );
-                  },
-                );
-              },
+            Expanded(
+              child: FutureBuilder(
+                future: selecionarPessoas(),
+                builder: (context, snapshot) {
+                  return ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: snapshot.data!.length,
+                    itemBuilder: (context, index) {
+                      return Card(
+                        child: Column(
+                          children: [
+                            Text("${snapshot.data![index].id}"),
+                            Text("${snapshot.data![index].nome}"),
+                            Text("${snapshot.data![index].cidade}"),
+                          ],
+                        ),
+                      );
+                    },
+                  );
+                },
+              ),
             ),
           ],
         ),
