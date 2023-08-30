@@ -41,6 +41,10 @@ class Pagina extends StatefulWidget {
 
 // State
 class ConteudoPagina extends State {
+  // Variáveis
+  String? nome;
+  String? cidade;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,15 +61,25 @@ class ConteudoPagina extends State {
                 children: [
                   // Campo de nome
                   TextField(
-                    onChanged: (valor) {},
+                    onChanged: (valor) {
+                      setState(() {
+                        nome = valor;
+                      });
+                    },
                   ),
                   // Cidade
                   TextField(
-                    onChanged: (value) {},
+                    onChanged: (valor) {
+                      setState(() {
+                        cidade = valor;
+                      });
+                    },
                   ),
                   // Botão
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      print("$nome - $cidade");
+                    },
                     child: const Text("Cadastrar"),
                   ),
                 ],
