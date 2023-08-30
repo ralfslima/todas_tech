@@ -98,7 +98,7 @@ class ConteudoPagina extends State {
                   // Botão
                   ElevatedButton(
                     onPressed: () {
-                      print("$nome - $cidade");
+                      cadastrarPessoa(nome!, cidade!);
                     },
                     child: const Text("Cadastrar"),
                   ),
