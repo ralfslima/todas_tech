@@ -52,11 +52,14 @@ Future<Pessoa> cadastrarPessoa(String nome, String cidade) async {
   // Extrair o retorno da API
   var pessoa = jsonDecode(retorno.body);
 
-  // Print
-  print(pessoa['id']);
+  // Criar um objeto do tipo Pessoa
+  Pessoa p = Pessoa();
+  p.id = pessoa["id"];
+  p.nome = pessoa["nome"];
+  p.cidade = pessoa["cidade"];
 
   // Retorno
-  return pessoa;
+  return p;
 }
 
 // SELECIONAR TODAS AS PESSOAS NA API
@@ -134,7 +137,11 @@ class ConteudoPagina extends State {
                   // Botão
                   ElevatedButton(
                     onPressed: () {
-                      cadastrarPessoa(nome!, cidade!);
+                      setState(() {
+                        // Obter os dados da pessoa cadastrada
+                        Future<Pessoa> obj = cadastrarPessoa(nome!, cidade!);
+                        obj.then((valor) => registros.add(valor));
+                      });
                     },
                     child: const Text("Cadastrar"),
                   ),

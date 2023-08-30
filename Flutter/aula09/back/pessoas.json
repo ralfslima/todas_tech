@@ -9,6 +9,16 @@
       "nome": "Larissa",
       "cidade": "Curitiba",
       "id": 2
+    },
+    {
+      "nome": "Lucas",
+      "cidade": "São Paulo",
+      "id": 3
+    },
+    {
+      "nome": "Carlos",
+      "cidade": "Goiânia",
+      "id": 4
     }
   ]
 }
