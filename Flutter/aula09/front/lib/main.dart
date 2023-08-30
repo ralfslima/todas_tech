@@ -89,6 +89,17 @@ class ConteudoPagina extends State {
   // Variáveis
   String? nome;
   String? cidade;
+  List<Pessoa> registros = [];
+
+  // Método de inicialização
+  @override
+  void initState() {
+    // Super
+    super.initState();
+
+    // Obter os registros da API
+    selecionarPessoas().then((listaPessoas) => registros = listaPessoas);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -132,6 +143,13 @@ class ConteudoPagina extends State {
             ),
 
             // LISTAGEM DE PESSOAS
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: registros.length,
+              itemBuilder: (context, index) {
+                return Text("${registros[index].nome}");
+              },
+            ),
           ],
         ),
       ),
