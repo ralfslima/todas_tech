@@ -52,8 +52,11 @@ class PaginaInicialState extends State {
                           Column(
                         children: [
                           // IMAGEM
-                          Image.network(
-                              "https://media.staticontent.com/media/pictures/04641818-297a-4f28-b635-b15e2fb31087"),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.network(
+                                "https://media.staticontent.com/media/pictures/04641818-297a-4f28-b635-b15e2fb31087"),
+                          ),
                           // TÍTULO
                           const Text("Curitiba"),
 
