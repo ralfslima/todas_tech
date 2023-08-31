@@ -92,17 +92,6 @@ class ConteudoPagina extends State {
   // Variáveis
   String? nome;
   String? cidade;
-  List<Pessoa> registros = [];
-
-  // Método de inicialização
-  @override
-  void initState() {
-    // Super
-    super.initState();
-
-    // Obter os registros da API
-    selecionarPessoas().then((listaPessoas) => registros = listaPessoas);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -139,8 +128,7 @@ class ConteudoPagina extends State {
                     onPressed: () {
                       setState(() {
                         // Obter os dados da pessoa cadastrada
-                        Future<Pessoa> obj = cadastrarPessoa(nome!, cidade!);
-                        obj.then((valor) => registros.add(valor));
+                        cadastrarPessoa(nome!, cidade!);
                       });
                     },
                     child: const Text("Cadastrar"),
