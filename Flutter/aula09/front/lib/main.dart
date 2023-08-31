@@ -43,23 +43,11 @@ class Pagina extends StatefulWidget {
 }
 
 // CADASTRAR UMA NOVA PESSOA NA API
-Future<Pessoa> cadastrarPessoa(String nome, String cidade) async {
+Future<void> cadastrarPessoa(String nome, String cidade) async {
   // Realizar requisição
-  var retorno = await http.post(Uri.parse('http://localhost:3000/pessoas'),
+  await http.post(Uri.parse('http://localhost:3000/pessoas'),
       headers: <String, String>{'Content-type': 'application/json'},
       body: jsonEncode(<String, String>{'nome': nome, 'cidade': cidade}));
-
-  // Extrair o retorno da API
-  var pessoa = jsonDecode(retorno.body);
-
-  // Criar um objeto do tipo Pessoa
-  Pessoa p = Pessoa();
-  p.id = pessoa["id"];
-  p.nome = pessoa["nome"];
-  p.cidade = pessoa["cidade"];
-
-  // Retorno
-  return p;
 }
 
 // SELECIONAR TODAS AS PESSOAS NA API
@@ -92,6 +80,13 @@ class ConteudoPagina extends State {
   // Variáveis
   String? nome;
   String? cidade;
+
+  // Método de inicialização
+  @override
+  void initState() {
+    // Super
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -127,7 +122,7 @@ class ConteudoPagina extends State {
                   ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        // Obter os dados da pessoa cadastrada
+                        // Executar o método de cadastro
                         cadastrarPessoa(nome!, cidade!);
                       });
                     },
