@@ -15,10 +15,30 @@ class PaginaInicial extends StatefulWidget {
 class PaginaInicialState extends State {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return
+        // COLUNA
+        Column(
       children: [
+        // IMAGEM
         Image.network(
-            "https://media.staticontent.com/media/pictures/04641818-297a-4f28-b635-b15e2fb31087")
+            "https://media.staticontent.com/media/pictures/04641818-297a-4f28-b635-b15e2fb31087"),
+        // TÍTULO
+        const Text("Curitiba"),
+
+        // LINHA CONTENDO OS BOTÕES
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text("Pontos turísticos"),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text("Mapa"),
+            ),
+          ],
+        )
       ],
     );
   }
