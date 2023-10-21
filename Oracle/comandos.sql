@@ -60,6 +60,7 @@ INSERT INTO produtos VALUES (gerar_codigo.NEXTVAL, 'Monitor LG - 32', 3200);
 INSERT INTO produtos VALUES (gerar_codigo.NEXTVAL, 'Telado Multilaser', 140);
 INSERT INTO produtos VALUES (gerar_codigo.NEXTVAL, 'Notebook Delll Inspiron 1456', 4560);
 INSERT INTO produtos (codigo, nome) VALUES (gerar_codigo.NEXTVAL, 'Macbook Air');
+
 9º Selecionar registros
 SELECT * FROM produtos;
 SELECT valor, nome FROM produtos;
